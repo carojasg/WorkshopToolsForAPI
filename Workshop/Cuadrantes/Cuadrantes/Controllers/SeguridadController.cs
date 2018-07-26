@@ -9,22 +9,20 @@ namespace Cuadrantes.Controllers
     [Route("api/[controller]")]
     public class SeguridadController : Controller
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="usuario"></param>
-        /// <param name="clave"></param>
-        /// <returns></returns>
         [HttpPost]
         public string IniciarSesion(string usuario, string clave)
         {
-            return string.Empty;
+            if (usuario == null && clave == null)
+            {
+                return "Datos invalidos, ingrese nuevamente los datos";
+            }
+            return "Bienvenido !!!";
         }
         [HttpPost]
         public string Registro(string cedula, DateTime fechaExpedicion,
             string telefono, string correo)
         {
-            return string.Empty;
+            return "Usuario registrado";
         }
     }
 }
